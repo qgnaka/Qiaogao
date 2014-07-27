@@ -1,23 +1,30 @@
 package com.qiaogaohhb.qiaogao;
 
+import android.R.integer;
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
-import android.os.Build;
 
 public class MainActivity extends Activity {
-
+	
+	private TextView textView;
+	private Button button;
+	int count = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		TextView textView=(TextView)findViewById(R.id.textView);
-		
+		textView=(TextView)findViewById(R.id.textView);
+		textView.setText("hello，乔槁。");
+//		textView.setBackgroundColor(color.black);
+		button=(Button)findViewById(R.id.button);
+		ButtonListener buttonListener = new ButtonListener();
+		button.setOnClickListener(buttonListener);
 		
 //为简化逻辑暂改回旧版，fragment_main.xml已删除,参见http://bbs.csdn.net/topics/390740123
 //		if (savedInstanceState == null) {
@@ -34,6 +41,18 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	class ButtonListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v){
+			count++;
+			textView.setText(count+"");
+		}
+		
+	}
+	
+	
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will

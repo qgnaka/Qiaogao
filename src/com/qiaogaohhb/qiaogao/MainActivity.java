@@ -1,13 +1,13 @@
 package com.qiaogaohhb.qiaogao;
 
 import android.app.Activity;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.os.Build;
 
 public class MainActivity extends Activity {
@@ -16,6 +16,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		TextView textView=(TextView)findViewById(R.id.textView);
+		
+		
 //为简化逻辑暂改回旧版，fragment_main.xml已删除,参见http://bbs.csdn.net/topics/390740123
 //		if (savedInstanceState == null) {
 //			getFragmentManager().beginTransaction()
